@@ -9,11 +9,12 @@
 
 ## Ekibimiz
 
--  **Danışman:** - Keyvan Arasteh [Github] [https://github.com/keyvanarasteh](https://github.com/keyvanarasteh)
+-  **Danışman:** 
+- Keyvan Arasteh [https://github.com/keyvanarasteh]
 
 -  **Takım Üyeleri:**
 
-- Rabia Dündar [Github](https://github.com/rabiadundar)
+- Rabia Dündar [https://github.com/rabiadundar]
 
   
 
