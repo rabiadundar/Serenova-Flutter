@@ -77,3 +77,6 @@ lib/
 
 ## Lisans
 MIT LICENSE] kapsamında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasını inceleyebilirsiniz
+
+## Teşekkürler
+- İstinye Üniversitesi'ne destekleri için teşekkür ederiz.
