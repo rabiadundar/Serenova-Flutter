@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:go_router/go_router.dart';
 
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({super.key});
@@ -21,7 +22,7 @@ class LoadingScreen extends StatelessWidget {
                   width: 150,
                   height: 150,
                   child: Image.asset(
-                    'assets/images/ll.webp',
+                    'assets/images/logg.webp',
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -31,22 +32,44 @@ class LoadingScreen extends StatelessWidget {
                 // Yükleme ikonu
                 CircularProgressIndicator(),
 
+                const SizedBox(height: 30),
+
+                // InkWell: Kullanıcıyı yönlendirecek bir tıklanabilir alan
+                InkWell(
+                  onTap: () => context.go("/home"), // Yönlendirme işlemi
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 20),
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(
+                          250, 148, 170, 223), // Arka plan rengi
+                      borderRadius: BorderRadius.circular(8), // Köşe yuvarlama
+                    ),
+                    child: const Text(
+                      "Giriş Yap",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+
                 const SizedBox(height: 20),
 
                 // Yükleniyor yazısı
                 const Text(
                   "Serenova'ya adım atın.",
                   style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.italic),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    fontStyle: FontStyle.italic,
+                  ),
                 ),
               ],
             ),
           ),
-          SizedBox(
-            height: 20,
-          )
         ],
       ),
     );

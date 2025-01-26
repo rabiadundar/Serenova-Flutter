@@ -7,6 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(250, 198, 216, 255),
       // AppBar
       appBar: AppBar(
         title: const Text('Ana Sayfa'),
@@ -80,15 +81,28 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.home),
+            icon: Icon(CupertinoIcons.home,
+                color: Color.fromARGB(255, 6, 45, 89)),
             label: 'Ana Sayfa',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.search),
+            icon: Icon(CupertinoIcons.calendar,
+                color: Color.fromARGB(255, 6, 45, 89)),
+            label: 'Takvim',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.search,
+                color: Color.fromARGB(255, 6, 45, 89)),
             label: 'Keşfet',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.person),
+            icon: Icon(CupertinoIcons.music_albums,
+                color: Color.fromARGB(255, 6, 45, 89)),
+            label: 'Muzikler',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.person,
+                color: Color.fromARGB(255, 6, 45, 89)),
             label: 'Profil',
           ),
         ],
