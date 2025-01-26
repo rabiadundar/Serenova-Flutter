@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'routes/app_router.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized(); // Flutter widget'larını başlat
@@ -8,6 +7,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+  get router => null;
 
   @override
   Widget build(BuildContext context) {
