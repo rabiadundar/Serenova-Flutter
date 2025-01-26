@@ -7,17 +7,17 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 198, 216, 255),
+      backgroundColor: Color.fromARGB(250, 198, 216, 255),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Logo ve yükleme göstergesi bölümü
-          SizedBox(
+          Container(
             width: double.infinity,
             child: Column(
               children: [
                 // Logo bölümü
-                SizedBox(
+                Container(
                   width: 150,
                   height: 150,
                   child: Image.asset(
@@ -29,25 +29,24 @@ class LoadingScreen extends StatelessWidget {
                 const SizedBox(height: 30),
 
                 // Yükleme ikonu
-                const Icon(
-                  CupertinoIcons.arrow_2_circlepath,
-                  size: 40,
-                  color: Colors.blue,
-                ),
+                CircularProgressIndicator(),
 
                 const SizedBox(height: 20),
 
                 // Yükleniyor yazısı
                 const Text(
-                  'Yükleniyor...',
+                  "Serenova'ya adım atın.",
                   style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      fontStyle: FontStyle.italic),
                 ),
               ],
             ),
           ),
+          SizedBox(
+            height: 20,
+          )
         ],
       ),
     );
