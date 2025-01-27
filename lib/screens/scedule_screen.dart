@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
-class VoiceScreen extends StatelessWidget {
-  const VoiceScreen({super.key});
+class SceduleScreen extends StatelessWidget {
+  SceduleScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("muzik ekranim"),
+        child: Text("takvim ekranim"),
       ),
     );
-    ;
   }
 }
