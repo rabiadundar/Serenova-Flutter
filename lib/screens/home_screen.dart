@@ -21,19 +21,21 @@ class HomeScreen extends StatelessWidget {
 
       // Drawer (Yan Menü)
       drawer: Drawer(
+        backgroundColor: const Color.fromARGB(255, 176, 189, 201),
+        elevation: 0,
         child: Column(
           children: [
             // Drawer Header
             Container(
               height: 200,
-              color: Colors.blue,
+              //color: Colors.blue,
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
                     CupertinoIcons.person_circle,
                     size: 80,
-                    color: Colors.white,
+                    color: Colors.black87,
                   ),
                   SizedBox(height: 10),
                   Text(
@@ -50,6 +52,27 @@ class HomeScreen extends StatelessWidget {
             ListTile(
               leading: const Icon(CupertinoIcons.home),
               title: const Text('Ana Sayfa'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(CupertinoIcons.search),
+              title: const Text('Ara'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(CupertinoIcons.shopping_cart),
+              title: const Text('Abonelikler'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(CupertinoIcons.person),
+              title: const Text('Profilim'),
               onTap: () {
                 Navigator.pop(context);
               },
