@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'core/router.dart';
-//import 'core/themes.dart';
+import 'core/routes.dart';
+import 'core/themes.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized(); // Flutter widget'larını başlat
@@ -15,9 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Flutter App',
       themeMode: ThemeMode.light,
-      theme: ThemeData(fontFamily: "fonto"),
-      //theme: lightTheme,
-      // darkTheme: darkTheme,
+      theme: lightTheme,
+      darkTheme: darkTheme,
       routerConfig: router,
       debugShowCheckedModeBanner: false,
     );
