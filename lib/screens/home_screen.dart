@@ -11,10 +11,11 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Color.fromARGB(250, 198, 216, 255),
       // AppBar
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: const Text('Ana Sayfa'),
         actions: [
           IconButton(
-            icon: const Icon(CupertinoIcons.bell),
+            icon: const Icon(CupertinoIcons.heart_circle),
             onPressed: () {},
           ),
         ],
@@ -29,8 +30,7 @@ class HomeScreen extends StatelessWidget {
             // Drawer Header
             Container(
               height: 200,
-              //color: Colors.blue,
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
@@ -38,8 +38,8 @@ class HomeScreen extends StatelessWidget {
                     size: 80,
                     color: Colors.black87,
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     'Kullanıcı Adı',
                     style: TextStyle(
                       color: Colors.white,
@@ -54,21 +54,21 @@ class HomeScreen extends StatelessWidget {
               leading: const Icon(CupertinoIcons.home),
               title: const Text('Ana Sayfa'),
               onTap: () {
-                context.go('/home');
+                Navigator.pop(context);
               },
             ),
             ListTile(
               leading: const Icon(CupertinoIcons.search),
-              title: const Text('Kesfet'),
+              title: const Text('Keşfet'),
               onTap: () {
-                context.go('/search');
+                Navigator.pop(context);
               },
             ),
             ListTile(
               leading: const Icon(CupertinoIcons.shopping_cart),
               title: const Text('Abonelikler'),
               onTap: () {
-                context.go('/scedule');
+                Navigator.pop(context);
               },
             ),
             ListTile(
@@ -82,7 +82,7 @@ class HomeScreen extends StatelessWidget {
               leading: const Icon(CupertinoIcons.settings),
               title: const Text('Ayarlar'),
               onTap: () {
-                context.go('/settings');
+                Navigator.pop(context);
               },
             ),
           ],
@@ -102,37 +102,45 @@ class HomeScreen extends StatelessWidget {
       ),
 
       // Alt navigasyon çubuğu
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.home,
-                color: Color.fromARGB(255, 6, 45, 89)),
-            label: 'Ana Sayfa',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.calendar,
-                color: Color.fromARGB(255, 6, 45, 89)),
-            label: 'Takvim',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.search,
-                color: Color.fromARGB(255, 6, 45, 89)),
-            label: 'Keşfet',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.music_albums,
-                color: Color.fromARGB(255, 6, 45, 89)),
-            label: 'Muzikler',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.person,
-                color: Color.fromARGB(255, 6, 45, 89)),
-            label: 'Profil',
-          ),
-        ],
-        onTap: (index) {
-          // Navigasyon işlemleri buraya gelecek
-        },
+      bottomNavigationBar: Container(
+        height: 70,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              onPressed: () {
+                context.go('/home'); // Ana sayfa yönlendirmesi
+              },
+              icon: const Icon(
+                CupertinoIcons.home, // Ana sayfa simgesi
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                context.go('/calendar'); // Takvim yönlendirmesi
+              },
+              icon: const Icon(
+                CupertinoIcons.calendar, // Takvim simgesi
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                context.go('/headphones'); // Kulaklık ekranı yönlendirmesi
+              },
+              icon: const Icon(
+                CupertinoIcons.headphones, // Kulaklık simgesi
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                context.go('/profile'); // Profil yönlendirmesi
+              },
+              icon: const Icon(
+                CupertinoIcons.person, // Profil simgesi
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

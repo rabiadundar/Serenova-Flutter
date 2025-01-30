@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class HeadphonesScreen extends StatelessWidget {
+  const HeadphonesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Profil Ekranı"),
+        title: const Text("Müzik Ekranı"),
         backgroundColor: const Color.fromARGB(
-            255, 244, 255, 196), // İsteğe bağlı: Arka plan rengi
+            255, 244, 255, 196), // İsteğe bağlı: Renk seçimi
       ),
       body: Center(
         child: Text(
-          "Profil ekranım",
+          "Müzik ekranım",
           style: TextStyle(
             fontSize: 24, // Yazı boyutunu büyütme
             fontWeight: FontWeight.bold, // Kalın yazı

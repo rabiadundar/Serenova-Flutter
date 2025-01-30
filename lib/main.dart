@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'routes/app_router.dart';
+import 'core/router.dart'; // Burada app_router.dart dosyanızı içeri aktarıyoruz
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized(); // Flutter widget'larını başlat
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      routerConfig: router, // go_router yapılandırmamızı kullan
+      routerConfig: router, // go_router yapılandırmamızı burada kullanıyoruz
       debugShowCheckedModeBanner: false, // Debug bandını kaldır
     );
   }
