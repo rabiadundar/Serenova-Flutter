@@ -25,7 +25,7 @@ Serenova, kullanıcıların ruhsal ve bedensel sağlıklarını iyileştirmeyi h
 
 - Flutter
 - Dart
-- [Diğer teknolojiler]
+- VS Code
 
 
 ## Başlangıç
@@ -46,7 +46,7 @@ Serenova, kullanıcıların ruhsal ve bedensel sağlıklarını iyileştirmeyi h
 
 ```bash
 
-git  clone [proje-adresi]
+git  clone [https://github.com/rabiadundar/Serenova-Flutter]
 
 ```
 
@@ -56,7 +56,7 @@ git  clone [proje-adresi]
 
 ```bash
 
-cd [proje-adı]
+cd [Serenova-Flutter]
 
 ```
 
@@ -145,4 +145,5 @@ MIT LICENSE] kapsamında lisanslanmıştır. Daha fazla bilgi için LICENSE dosy
 ## Teşekkürler
 
 - İstinye Üniversitesi'ne destekleri için teşekkür ederiz.
+- special thanks to https://github.com/keyvanarasteh 
 
