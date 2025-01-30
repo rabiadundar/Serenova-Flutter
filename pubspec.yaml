@@ -1,10 +1,10 @@
 name: flutter_app
 description: "A new Flutter project."
-publish_to: 'none'  # Bu uygulama pub.dev'de yayınlanmayacak
-version: 0.1.0      # Uygulama versiyonu
+publish_to: 'none'  
+version: 0.1.0      
 
 environment:
-  sdk: ^3.5.4      # Flutter SDK versiyonu
+  sdk: ">=3.5.4 <4.0.0"  # Flutter SDK versiyonu
 
 dependencies:
   flutter:
@@ -15,6 +15,9 @@ dependencies:
   shared_preferences: ^2.3.3     # Basit veri depolama için
   dotlottie_loader: ^0.0.4
   lottie: ^3.2.0
+  google_fonts: ^6.2.1
+  flutter_localizations:         # Çoklu dil desteği için
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -24,7 +27,15 @@ dev_dependencies:
 flutter:
   uses-material-design: true    # Material Design widget'larını kullanmak için
   assets:                       # Projedeki dosya kaynakları
-    - assets/images/           # Görseller için
-    - assets/icons/           # İkonlar için
-    - assets/languages/       # Dil dosyaları için
-    - assets/motions/        # Animasyon dosyaları için
+    - assets/images/            # Görseller için
+    - assets/icons/             # İkonlar için
+    - assets/languages/         # Dil dosyaları için
+    - assets/motions/           # Animasyon dosyaları için
+
+  fonts:
+    - family: Akaya
+      fonts:
+        - asset: assets/fonts/AkayaKanadaka-Regular.ttf
+    - family: Kalam
+      fonts:
+        - asset: assets/fonts/Kalam-Regular.ttf   

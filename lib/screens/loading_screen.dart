@@ -62,6 +62,7 @@ class LoadingScreen extends StatelessWidget {
                 const Text(
                   "Serenova'ya adım atın.",
                   style: TextStyle(
+                    fontFamily: 'Kalam',
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                     fontStyle: FontStyle.italic,

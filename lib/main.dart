@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'core/router.dart'; // Burada app_router.dart dosyanızı içeri aktarıyoruz
+import 'core/router.dart';
+//import 'core/themes.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized(); // Flutter widget'larını başlat
@@ -13,12 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Flutter App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      routerConfig: router, // go_router yapılandırmamızı burada kullanıyoruz
-      debugShowCheckedModeBanner: false, // Debug bandını kaldır
+      themeMode: ThemeMode.light,
+      theme: ThemeData(fontFamily: "fonto"),
+      //theme: lightTheme,
+      // darkTheme: darkTheme,
+      routerConfig: router,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

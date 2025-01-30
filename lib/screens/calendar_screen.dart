@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/bottom_menu.dart';
 
 class CalendarScreen extends StatelessWidget {
   const CalendarScreen({super.key});
@@ -21,6 +22,7 @@ class CalendarScreen extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: BottomMenu(),
     );
   }
 }

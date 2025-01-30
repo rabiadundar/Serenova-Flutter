@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/bottom_menu.dart';
+
 class HeadphonesScreen extends StatelessWidget {
   const HeadphonesScreen({super.key});
 
@@ -21,6 +23,7 @@ class HeadphonesScreen extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: BottomMenu(),
     );
   }
 }

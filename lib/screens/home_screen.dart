@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import '../widgets/bottom_menu.dart'; // `BottomMenu` widget'ını burada kullanıyoruz
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,10 +9,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(250, 198, 216, 255),
-      // AppBar
+      backgroundColor: Colors.white, // Örnek olarak beyaz bir arka plan
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blue, // AppBar renk
         title: const Text('Ana Sayfa'),
         actions: [
           IconButton(
@@ -20,11 +20,8 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-
-      // Drawer (Yan Menü)
       drawer: Drawer(
-        backgroundColor: const Color.fromARGB(255, 176, 189, 201),
-        elevation: 0,
+        backgroundColor: Colors.grey[200],
         child: Column(
           children: [
             // Drawer Header
@@ -42,7 +39,7 @@ class HomeScreen extends StatelessWidget {
                   const Text(
                     'Kullanıcı Adı',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 18,
                     ),
                   ),
@@ -88,60 +85,22 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-
-      // Ana içerik
       body: Column(
         children: [
           Expanded(
             child: Container(
               padding: const EdgeInsets.all(16),
-              child: const Text('Ana Sayfa İçeriği'),
+              child: const Text(
+                'Ana Sayfa İçeriği',
+                style: TextStyle(
+                  fontFamily: 'Akaya',
+                ),
+              ),
             ),
           ),
         ],
       ),
-
-      // Alt navigasyon çubuğu
-      bottomNavigationBar: Container(
-        height: 70,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-              onPressed: () {
-                context.go('/home'); // Ana sayfa yönlendirmesi
-              },
-              icon: const Icon(
-                CupertinoIcons.home, // Ana sayfa simgesi
-              ),
-            ),
-            IconButton(
-              onPressed: () {
-                context.go('/calendar'); // Takvim yönlendirmesi
-              },
-              icon: const Icon(
-                CupertinoIcons.calendar, // Takvim simgesi
-              ),
-            ),
-            IconButton(
-              onPressed: () {
-                context.go('/headphones'); // Kulaklık ekranı yönlendirmesi
-              },
-              icon: const Icon(
-                CupertinoIcons.headphones, // Kulaklık simgesi
-              ),
-            ),
-            IconButton(
-              onPressed: () {
-                context.go('/profile'); // Profil yönlendirmesi
-              },
-              icon: const Icon(
-                CupertinoIcons.person, // Profil simgesi
-              ),
-            ),
-          ],
-        ),
-      ),
+      bottomNavigationBar: BottomMenu(), // Alt navigasyon çubuğu
     );
   }
 }
