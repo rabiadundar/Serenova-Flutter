@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lottie/lottie.dart';
+import 'package:dotlottie_loader/dotlottie_loader.dart';
 
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({super.key});
@@ -8,70 +9,79 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(250, 198, 216, 255),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // Logo ve yükleme göstergesi bölümü
-          Container(
-            width: double.infinity,
-            child: Column(
-              children: [
-                // Logo bölümü
-                Container(
-                  width: 150,
-                  height: 150,
-                  child: Image.asset(
-                    'assets/images/logg.webp',
-                    fit: BoxFit.contain,
-                  ),
-                ),
-
-                const SizedBox(height: 30),
-
-                // Yükleme ikonu
-                const CircularProgressIndicator(),
-
-                const SizedBox(height: 30),
-
-                // InkWell: Kullanıcıyı yönlendirecek bir tıklanabilir alan
-                InkWell(
-                  onTap: () => context.go("/home"), // Yönlendirme işlemi
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 20),
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(
-                          250, 148, 170, 223), // Arka plan rengi
-                      borderRadius: BorderRadius.circular(8), // Köşe yuvarlama
-                    ),
-                    child: const Text(
-                      "Giriş Yap",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-
-                const SizedBox(height: 20),
-
-                // Yükleniyor yazısı
-                const Text(
-                  "Serenova'ya adım atın.",
-                  style: TextStyle(
-                    fontFamily: 'Kalam',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-              ],
+      backgroundColor: const Color.fromARGB(250, 198, 216, 255),
+      body: Center(
+        // Tüm içeriği ortalamak için Center widget'ı ekledim
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment:
+              CrossAxisAlignment.center, // Kolon içindeki öğeleri ortalıyoruz
+          children: [
+            // Logo bölümü
+            SizedBox(
+              width: 150,
+              height: 150,
+              child: Image.asset(
+                'assets/images/logg.webp',
+                fit: BoxFit.contain,
+              ),
             ),
-          ),
-        ],
+
+            // Lottie Animasyonu
+            SizedBox(
+              width: 70,
+              height: 70,
+              child: DotLottieLoader.fromAsset(
+                "assets/motions/aa.lottie",
+                frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
+                  if (dotlottie != null) {
+                    return Lottie.memory(
+                      dotlottie.animations.values.single,
+                      fit: BoxFit.contain,
+                    );
+                  } else {
+                    return Container();
+                  }
+                },
+              ),
+            ),
+            const SizedBox(height: 20),
+
+            // Giriş butonu
+            InkWell(
+              onTap: () => context.go("/home"),
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(250, 148, 170, 223),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: const Text(
+                  "Giriş Yap",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            // Yükleniyor yazısı
+            const Text(
+              "Serenova'ya adım atın.",
+              style: TextStyle(
+                fontFamily: 'Kalam',
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
