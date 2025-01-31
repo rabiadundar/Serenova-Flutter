@@ -110,10 +110,9 @@ lib/
 
   
 
-## Ekran Görüntüleri
+## Demo Video
 
-[Uygulama ekran görüntüleri buraya eklenecek]
-
+https://github.com/user-attachments/assets/c77d027d-5bf2-463f-9dac-0fe4ab585f30
   
 
 ## Projeye Katkı Sağlama
