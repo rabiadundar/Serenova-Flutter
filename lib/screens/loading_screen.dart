@@ -54,15 +54,15 @@ class LoadingScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(250, 148, 170, 223),
+                  color: const Color.fromARGB(255, 244, 255, 196),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: const Text(
                   "Giriş Yap",
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 15,
+                    color: Color.fromRGBO(255, 143, 149, 1),
                     fontWeight: FontWeight.bold,
+                    fontSize: 15,
                   ),
                 ),
               ),
@@ -75,8 +75,9 @@ class LoadingScreen extends StatelessWidget {
               "Serenova'ya adım atın.",
               style: TextStyle(
                 fontFamily: 'Kalam',
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
+                fontSize: 20,
+                color: Color.fromARGB(255, 80, 97, 131),
+                fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.italic,
               ),
             ),

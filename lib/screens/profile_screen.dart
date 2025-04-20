@@ -16,6 +16,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   bool _isLogin = true; // Giriş formu aktif mi?
 
+  @override
+  void dispose() {
+    // TextEditingController'ları temizleyelim
+    _nameController.dispose();
+    _surnameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
   // Formu doğrulama ve giriş/kayıt işlemi
   void _submitForm() {
     if (_formKey.currentState?.validate() ?? false) {
@@ -107,6 +117,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Lütfen e-posta adresinizi girin';
+                  } else if (!RegExp(
+                          r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
+                      .hasMatch(value)) {
+                    return 'Geçersiz e-posta adresi';
                   }
                   return null;
                 },
@@ -125,6 +139,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Lütfen şifrenizi girin';
+                  } else if (value.length < 6) {
+                    return 'Şifre en az 6 karakter olmalıdır';
                   }
                   return null;
                 },
