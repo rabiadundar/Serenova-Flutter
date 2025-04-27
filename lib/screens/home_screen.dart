@@ -73,6 +73,15 @@ class HomeScreen extends StatelessWidget {
                     255, 225, 215, 125), // Sol menüde buton arka planı sarı
                 textColor: Colors.black, // Metin rengini siyah yapıyoruz
               ),
+
+              ListTile(
+                leading: const Icon(Icons.calendar_today, size: 30),
+                title: const Text('Takvim', style: TextStyle(fontSize: 18)),
+                onTap: () => context.go(
+                    "/calendar"), // Burada "/calendar" yoluna yönlendiriyoruz
+                tileColor: const Color.fromARGB(255, 225, 215, 125),
+                textColor: Colors.black,
+              ),
               const SizedBox(height: 280),
               // Giriş Yap ve Çıkış Yap ikonları
               Padding(
@@ -207,7 +216,7 @@ class HomeScreen extends StatelessWidget {
                   // Kedili pozların renkleri
                   List<Color> pozRenkleri = [
                     const Color.fromARGB(255, 238, 172, 84), // Çita
-                    const Color.fromARGB(255, 157, 155, 155)!, // Persian Kedisi
+                    const Color.fromARGB(255, 157, 155, 155), // Persian Kedisi
                     const Color.fromARGB(255, 171, 117, 97), // Bengal Kedisi
                     const Color.fromARGB(255, 122, 172, 197), // Sphynx Kedisi
                     const Color.fromARGB(255, 98, 194, 101), // Maine Coon

@@ -18,6 +18,8 @@ dependencies:
   google_fonts: ^6.2.1
   flutter_localizations:         # Çoklu dil desteği için
     sdk: flutter
+  table_calendar: ^3.0.0
+
 
 dev_dependencies:
   flutter_test:
