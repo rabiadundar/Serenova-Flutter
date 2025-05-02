@@ -158,7 +158,11 @@ class _CalendarScreenState extends State<CalendarScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomMenu(),
+      bottomNavigationBar: Container(
+        color: const Color.fromARGB(
+            255, 244, 255, 196), // Alt kısmın arka plan rengi
+        child: const BottomMenu(),
+      ),
     );
   }
 
