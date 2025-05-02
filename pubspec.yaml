@@ -19,12 +19,18 @@ dependencies:
   flutter_localizations:         # Çoklu dil desteği için
     sdk: flutter
   table_calendar: ^3.0.0
-
+  sqflite: ^2.0.0+4              # Veritabanı işlemleri için
+  path_provider: ^2.0.0          # Dosya yolu sağlayıcı
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0         # Kod kalitesi kontrolleri için
+dependencies:
+  flutter:
+    sdk: flutter
+  url_launcher: ^6.2.5
+
 
 flutter:
   uses-material-design: true    # Material Design widget'larını kullanmak için

@@ -82,7 +82,7 @@ class HomeScreen extends StatelessWidget {
                 tileColor: const Color.fromARGB(255, 225, 215, 125),
                 textColor: Colors.black,
               ),
-              const SizedBox(height: 280),
+              const SizedBox(height: 250),
               // Giriş Yap ve Çıkış Yap ikonları
               Padding(
                 padding: const EdgeInsets.all(10.0),
